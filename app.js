@@ -32,3 +32,4 @@ console.log((t === 50 || l == 50) || (t + l === 50));
 // Write a JS program check if a given positive number is a multiple of 3 or a multiple of 7​
 let p = 15
 console.log(p % 3 === 0 || p % 7 === 0);
+
