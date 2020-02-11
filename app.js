@@ -17,8 +17,10 @@ function arrays_sum(array1, array2)
 {
   let c = 0;
   let result = [];
+  if (array1.length !== array2.length)
+    throw new Error ("Test Error");
  while (c < array1.length && c < array2.length) 
-  {
+  {  
     result.push(array1[c] + array2[c]);
     c++;   
   }
@@ -31,10 +33,10 @@ let r = {
   width: 6,
   height: 5,
   getArea() {
-    return (r.width * r.height);
+    return (this.width * this.height);
   },
   getPerimeter(){
-    return (r.width + r.height);
+    return (this.width + this.height);
   }
 };
 console.log('Area =', r.getArea());
