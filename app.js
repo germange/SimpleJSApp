@@ -1,15 +1,9 @@
-class Vehicle {
-  constructor(carModel, carYear, maxSpeed){
-    this.model = carModel;
-    this.year = carYear;
-    this.maxSpeed = maxSpeed;
-  }
-  displayInfo(){
-    console.log(`Name: ${this.model};
-    Year: ${this.year};
-    Max Speed ${this.maxSpeed};
-    Type: ${this.type};`
-    )
-  }
-}
-module.exports = Vehicle;
+let Car = require('./car')
+let Truck = require('./truck')
+
+let bmw = new Truck ("xc60",2015,200);
+bmw.displayInfo();
+
+Car.transportPeople();
+
+

@@ -1,10 +1,11 @@
-let Vehicle = require('./app');
+let Vehicle = require('./vehicle');
 
 class Truck extends Vehicle{
     constructor(carModel, carYear, maxSpeed){
       super(carModel, carYear, maxSpeed);
       this.type = "truck";
     }
+    //overriding parent method
     displayInfo() {
         console.log(`It is a car model: ${this.model};
         Made in year: ${this.year};
@@ -12,5 +13,4 @@ class Truck extends Vehicle{
     }
   }
   
-  let bmw = new Truck ("xc60",2015,200);
-  bmw.displayInfo();
+  module.exports = Truck;

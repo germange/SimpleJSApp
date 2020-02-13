@@ -1,4 +1,4 @@
-let Vehicle = require('./app');
+let Vehicle = require('./vehicle');
 
 class Car extends Vehicle{
   constructor(carModel, carYear, maxSpeed){
@@ -9,4 +9,5 @@ class Car extends Vehicle{
     console.log('I am starting transporting passengers');
   }
 }
-Car.transportPeople();
+
+module.exports = Car;
