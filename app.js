@@ -1,14 +1,43 @@
-console.log("\nNice work! Your first application have been launched.");
-console.log("Now, I need to know your name, type it below:Gennadiy ");
+let randomstring = require("randomstring");
+let fs = require('fs');
 
-let stdin = process.openStdin();
 
-stdin.addListener("data", (txt) => {
-    if(txt.toString().trim() === "quit") {
-        console.log("\nHave a nice JS trip! Bye-bye");
-        stdin.end();
-    } else {
-        console.log(`\nHi ${txt.toString().trim()}, nice to meet you at Eleks QA Academy 2018. I am sure you'll become great in your job.`);
-        console.log(`${txt.toString().trim()}, to quit this application you can use 'Ctrl + C' keys, or type 'quit' and hit 'Enter'`); 
-    }   
-  });
+
+let students = {
+  name:randomstring.generate({
+    length: 12,
+    charset: 'alphabetic'
+  }),
+  surname:randomstring.generate({
+    length: 12,
+    charset: 'alphabetic'
+  }),
+  rate:Math.floor((Math.random()*100)+1)
+}
+
+
+if (fs.existsSync('./Students.json')) {
+  throw new Error ('The file is already exists'); 
+}
+else
+fs.writeFile('Students.json', JSON.stringify(students),
+function (err){
+  if (err) throw err;
+  console.log('Saved');
+
+  fs.readFile('Students.json',
+  function (err,data){
+    if (err) throw err;
+    let newstudent = JSON.parse(data)
+    console.log('Current student name is: '+ newstudent.name);
+
+    let updatestudent = newstudent;
+    updatestudent.name = "Tomas";
+      
+  fs.appendFile('Students.json', JSON.stringify(updatestudent),
+  function (err){
+    if (err) throw err;
+    console.log('Updated student name is:  ' + updatestudent.name);
+  })
+})
+})
