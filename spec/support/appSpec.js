@@ -1,6 +1,5 @@
 let compare = require('/Users/gennadiy.german/Localtest/SimpleJSApp/appCompare');
 let sum = require('/Users/gennadiy.german/Localtest/SimpleJSApp/appSum');
-let calc = require('/Users/gennadiy.german/Localtest/SimpleJSApp/appCalc');
 
   describe("compare", function(){ 
 
@@ -16,7 +15,6 @@ let calc = require('/Users/gennadiy.german/Localtest/SimpleJSApp/appCalc');
     
       });
 
-
       describe("sum", function(){ 
 
         it("sum(1)", function() {
@@ -26,24 +24,3 @@ let calc = require('/Users/gennadiy.german/Localtest/SimpleJSApp/appCalc');
             expect(sum(50,8)).toEqual(61);
           });  
       });
-
-      /*describe("calc", function(){ 
-
-        it("+(1)", function() {
-          expect(calc(1,2,'+')).toEqual(3);
-        });
-        it("-", function() {
-            expect(calc(1,2,'-')).toEqual(-1);
-          });
-          it("*", function() {
-            expect(calc(1,2,'*')).toEqual(2);
-          });
-          it("/", function() {
-            expect(calc(1,2,'/')).toEqual(0.5);
-          });
-          it("=", function() {
-            expect(calc(1,2,'=')).toMatch('Please enter multiply, divide, add, or subtract.');
-          });
-    
-      });
-      */
