@@ -1,14 +1,24 @@
-console.log("\nNice work! Your first application have been launched.");
-console.log("Now, I need to know your name, type it below:Gennadiy ");
 
-let stdin = process.openStdin();
+/*Write 4 CSS selectors:
 
-stdin.addListener("data", (txt) => {
-    if(txt.toString().trim() === "quit") {
-        console.log("\nHave a nice JS trip! Bye-bye");
-        stdin.end();
-    } else {
-        console.log(`\nHi ${txt.toString().trim()}, nice to meet you at Eleks QA Academy 2018. I am sure you'll become great in your job.`);
-        console.log(`${txt.toString().trim()}, to quit this application you can use 'Ctrl + C' keys, or type 'quit' and hit 'Enter'`); 
-    }   
-  });
+Wiki logo:
+.mw-wiki-logo
+Div element for Article count:
+#articlecount
+Main page link:
+#ca-nstab-main
+2-nd item from "Did you know…" list:
+#mp-dyk > ul > li:nth-child(2)
+*/
+
+/*Write 4 XPath locators
+
+Wiki logo:
+//*[@id="p-logo"]/a
+Div element for Article count:
+//*[@id="articlecount"]
+4-th item from "Did you know…" list:
+//*[@id="mp-dyk"]/ul/li[4]
+Count of ‘Interaction’ elements:
+$x("count(//*[@id='p-interaction']/div/ul/li)")
+*/
